@@ -34,8 +34,37 @@ from runner.koan import *
 # Your goal is to write the score method.
 
 def score(dice):
-    # You need to write this method
-    pass
+    Matrix = [[0, 100, 200, 1000, 1100, 1200, 2000],
+              [0, 0, 0, 200, 200, 200, 400],
+              [0, 0, 0, 300, 300, 300, 600],
+              [0, 0, 0, 400, 400, 400, 800],
+              [0, 50, 100, 500, 550, 600, 1000],
+              [0, 0, 0, 600, 600, 600, 1200]]
+    # len 4
+    counter1 = 0
+    counter2 = 0
+    counter3 = 0
+    counter4 = 0
+    counter5 = 0
+    counter6 = 0
+    sum = 0
+    for digits in dice:
+        if (digits == 1):
+            counter1 += 1
+        if (digits == 2):
+            counter2 += 1
+        if (digits == 3):
+            counter3 += 1
+        if (digits == 4):
+            counter4 += 1
+        if (digits == 5):
+            counter5 += 1
+        if (digits == 6):
+            counter6 += 1
+    sum = Matrix[0][counter1] + Matrix[1][counter2] + Matrix[2][counter3] + Matrix[3][counter4] + Matrix[4][counter5] + \
+          Matrix[5][counter6]
+    print(counter5)
+    return sum
 
 
 class AboutScoringProject(Koan):
